@@ -54,16 +54,16 @@ contract DeployAvailNitroContracts2Point1Point0UpgradeActionScript is
     // );
 
     // deploy new Avail Bridge contract
-    // address availDABridge = deployBytecodeFromJSON(
-    //   '/scripts/foundry/avail-nitro-contract-upgrades/AvailDABridge.sol/AvailDABridge.json'
-    // );
+    address availDABridge = deployBytecodeFromJSON(
+      '/scripts/foundry/avail-nitro-contract-upgrades/AvailDABridge.sol/AvailDABridge.json'
+    );
 
     // finally deploy upgrade action
-    // new AvailNitroContracts2Point1Point0UpgradeAction({
-    //   _newWasmModuleRoot: AVAIL_WASM_MODULE_ROOT,
-    //   _newAvailDABridgeImpl: availDABridge,
-    //   _newSequencerInboxImpl: seqencerInbox
-    // });
+    new AvailNitroContracts2Point1Point0UpgradeAction({
+      _newWasmModuleRoot: AVAIL_WASM_MODULE_ROOT,
+      _newAvailDABridgeImpl: availDABridge,
+      _newSequencerInboxImpl: seqencerInbox
+    });
 
     vm.stopBroadcast();
   }

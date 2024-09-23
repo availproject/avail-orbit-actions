@@ -94,7 +94,7 @@ contract AvailNitroContracts2Point1Point0UpgradeAction {
     require(
       proxyAdmin.getProxyImplementation(sequencerInbox) ==
         newSequencerInboxImpl,
-      'NitroContracts2Point1Point0UpgradeAction: new challenge manager implementation set'
+      'AvailNitroContracts2Point1Point0UpgradeAction: new sequencer inbox implementation set'
     );
 
     // set new wasm module root
@@ -103,7 +103,7 @@ contract AvailNitroContracts2Point1Point0UpgradeAction {
     // verify:
     require(
       rollup.wasmModuleRoot() == newWasmModuleRoot,
-      'NitroContracts2Point1Point0UpgradeAction: wasm module root not set'
+      'AvailNitroContracts2Point1Point0UpgradeAction: wasm module root not set'
     );
   }
 }
